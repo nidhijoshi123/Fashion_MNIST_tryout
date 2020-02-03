@@ -36,3 +36,5 @@ CLASSIFICATION PROBLEM
 7. Confusion_matrix.py produces confusion matrix of the training dataset.
 
 8. Testing_testSET produces confusion matrix of test dataset.
+
+9. Supporting_functions has some functions for quick access.
