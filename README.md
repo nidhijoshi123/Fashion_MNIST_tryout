@@ -12,6 +12,8 @@ CLASSIFICATION PROBLEM
 28×28 grayscale/single channel images.
 
 2. The 10 underlying class labels (or categories) are:
+
+
 0:T-shirt/top
 1:Trouser/pants
 2:Pullover shirt
