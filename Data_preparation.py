@@ -6,7 +6,7 @@ import torchvision.transforms as transforms     #transformations for image proce
 
 #Data Preparation (ETL)
 
-#Extract(E) and Transform(T) image data into tensor data
+#Extract(E) and Transform(T) image data into tensor data(Train dataset)
 
 train_set=torchvision.datasets.FashionMNIST(
         root= './data/FashionMNIST',
@@ -20,7 +20,7 @@ train_set=torchvision.datasets.FashionMNIST(
 
 train_loader=torch.utils.data.DataLoader(train_set,batch_size=100, shuffle=True)
 
-
+#Load test dataset
 test_set=torchvision.datasets.FashionMNIST(
         root= './data/FashionMNIST',
         train=False,
