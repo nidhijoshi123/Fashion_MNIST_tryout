@@ -38,3 +38,5 @@ CLASSIFICATION PROBLEM
 8. Testing_testSET produces confusion matrix of test dataset.
 
 9. Supporting_functions has some functions for quick access.
+
+10. Use fmnist_environment.yaml to set up the same conda environment (with all dependencies) as mine!
