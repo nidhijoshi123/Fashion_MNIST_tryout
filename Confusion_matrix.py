@@ -22,8 +22,9 @@ model = torch.load('C:/Users/nidhi/FashionMNIST/model/model.pt')
 #        preds=model(images)
 #        all_preds=torch.cat((all_preds,preds),dim=0)
 #        return all_preds
+   
     
-    
+#Load entire training set at once    
 prediction_loader=torch.utils.data.DataLoader(Data_preparation.train_set,batch_size=60000)
 
 #Network predictions
@@ -36,24 +37,28 @@ train_preds=Supporting_functions.get_all_preds(model,prediction_loader)
 with torch.no_grad():
     prediction_loader= torch.utils.data.DataLoader(Data_preparation.train_set,batch_size=60000)
     train_preds=Supporting_functions.get_all_preds(model,prediction_loader)
-    
+
+#Total correct predictions    
 preds_correct= Supporting_functions.get_num_correct(train_preds,Data_preparation.train_set.targets)
 
 print("total correct: ",preds_correct)
 print("Accuracy: ", preds_correct/len(Data_preparation.train_set),"%")
 
 #Confusion matrix traditional approach
+#Stack true labels and predicted labels (along new axis)
 
 stacked= torch.stack(
         (Data_preparation.train_set.targets,train_preds.argmax(dim=1)),
         dim=1)
 
+#Initialize confusion matrix
 cmt=torch.zeros(10,10,dtype=torch.int32)
 
 for p in stacked:
     true_label,pred_label=p.tolist()
     cmt[true_label,pred_label]=cmt[true_label,pred_label]+1
-    
+
+#Display confusion matrix
 print("Confusion matrix traditional approach: \n", cmt)
 
 #Confusion matrix sklearn approach
