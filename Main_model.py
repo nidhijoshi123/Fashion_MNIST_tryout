@@ -16,7 +16,7 @@ torch.set_grad_enabled(True)
 #Extend the super class nn.Module
 
 class Network(nn.Module):
-    def __init__(self):
+    def __init__(self):#Define NN layers
         super(Network,self).__init__()
         
         #Add convolutional layers
@@ -29,7 +29,7 @@ class Network(nn.Module):
         self.out=nn.Linear(in_features=60,out_features=10)
         
         
-    def forward(self,t):
+    def forward(self,t):#Define NN forward pass
             #forward pass
             #input layer
             
@@ -97,6 +97,7 @@ optimizer=optim.Adam(network.parameters(),lr=0.01)
 #print(pred.argmax(dim=1))
 #print(F.softmax(pred,dim=1))
 
+#For tensorboard applications
 images,labels=next(iter(Data_preparation.train_loader))
 grid=torchvision.utils.make_grid(images)
 
@@ -104,7 +105,7 @@ tb=SummaryWriter()
 tb.add_image('images',grid)
 tb.add_graph(network,images)
 
-
+#Epochs 1-10
 for epoch in range(10):
     total_loss=0
     total_correct=0
@@ -144,10 +145,12 @@ for epoch in range(10):
     tb.add_histogram("conv1 weight",network.conv1.weight,epoch)
     tb.add_histogram("conv1 weight gradient",network.conv1.weight.grad,epoch)
     
-    
+    #Print updates after every epoch
     print("epoch: ",epoch,"total correct: ",total_correct,"total loss: ",total_loss)
-    
+ 
+#Print overall network accuracy on training dataset
 accuracy=total_correct/len(Data_preparation.train_set)
 print("Network Accuracy: ",accuracy*100,"%")
 
+#Save trained model(parameters) for inference
 torch.save(network, 'C:/Users/nidhi/FashionMNIST/model/model.pt')
