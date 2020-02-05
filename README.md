@@ -40,3 +40,5 @@ CLASSIFICATION PROBLEM
 9. Supporting_functions has some functions for quick access.
 
 10. Use fmnist_environment.yaml to set up the same conda environment (with all dependencies) as mine!
+
+11. Experiment with RMSprop optimizer and SGD optimizer yielded an accuracy of 86% and 80% respectively.
