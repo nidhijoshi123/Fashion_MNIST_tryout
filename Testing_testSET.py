@@ -7,7 +7,7 @@ import torch
 from sklearn.metrics import confusion_matrix
 
 #Load trained model
-model = torch.load('C:/Users/nidhi/FashionMNIST/model/model.pt')
+model = torch.load('.../model.pt')
 
 #Load entire test dataset at once
 prediction_loader=torch.utils.data.DataLoader(Data_preparation.test_set,batch_size=10000)
