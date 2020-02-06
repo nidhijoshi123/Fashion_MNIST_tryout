@@ -25,9 +25,9 @@ CLASSIFICATION PROBLEM
 8:Bag
 9:Ankle boot
 
-3. We train our CNN model on the Fashion MNIST dataset, evaluate it, and review the results. Pytorch deep learning framework has been used. Torchvision is used to handle the datasets.
+3. The CNN model is trained and evaluated on the Fashion MNIST dataset. Pytorch deep learning framework has been used. Torchvision is used to handle the datasets.
 
-4. Data_preparation.py gets us started with loading the training and test dataset. We perform the ETL (Extract,Transform and Loading) operations on our dataset here.
+4. Data_preparation.py gets us started with loading the training and test dataset. The ETL (Extract,Transform and Loading) operations are performed on the dataset here.
 
 5. Main_model.py has the network definition. Forward pass, back prop, training the neural network are done here. Additionally, classification metrics (accuracy,loss) along with the real time tensorboard visualizations are defined here. Finally, the model is saved (model/model.pt).
 
