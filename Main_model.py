@@ -153,4 +153,4 @@ accuracy=total_correct/len(Data_preparation.train_set)
 print("Network Accuracy: ",accuracy*100,"%")
 
 #Save trained model(parameters) for inference
-torch.save(network, 'C:/Users/nidhi/FashionMNIST/model/model.pt')
+torch.save(network, '.../model.pt')
