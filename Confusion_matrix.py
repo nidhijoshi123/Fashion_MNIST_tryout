@@ -10,7 +10,7 @@ import Supporting_functions
 
 #Load trained model
 
-model = torch.load('C:/Users/nidhi/FashionMNIST/model/model.pt')
+model = torch.load('.../model.pt')
 
 #Makes predictions on batch of images and concatenates
 #
